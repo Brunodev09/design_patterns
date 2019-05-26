@@ -1,7 +1,8 @@
 // ======== FACTORY PATTERN ========
 
-function MemberFactory() {
-  this.createMember = function(name, type) {
+class MemberFactory {
+
+  createMember(name, type) {
     let member;
     if (type === "simple") {
       member = new Simple(name);
@@ -21,19 +22,25 @@ function MemberFactory() {
   };
 }
 
-const Simple = function(name) {
-  this.name = name;
-  this.cost = 50;
+class Simple {
+    constructor(name) {
+        this.name = name;
+        this.cost = 50;
+    }
 };
 
-const Std = function(name) {
-  this.name = name;
-  this.cost = 100;
+class Std {
+    constructor(name) {
+        this.name = name;
+        this.cost = 100;
+    }
 };
 
-const Super = function(name) {
-  this.name = name;
-  this.cost = 150;
+class Super {
+    constructor(name) {
+        this.name = name;
+        this.cost = 150;
+    }
 };
 
 const clients = [];
